@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./dist/output.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/svg-with-js.min.css"crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/regular.min.css"crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <title>Document</title>
+    <style>
+      html{
+        font-family: Open Sans, sans-serif;
+      }
+    </style>
+  </head>
+  <body class="flex flex-col items-center justify-center px-8 bg-bg md:flex-row">
+    <!-- haute barre de navigation / phone design -->
+    <section class="w-full pt-10 top_navigation md:hidden ">
+        <nav class="bg-bg pt-5 pb-2 w-full h-aut flex flex-col gap-5 fixed top-0 pr-[4rem] justify-start left-[2rem] z-20">
+            <div class="flex justify-between w-full">
+                <div class="flex items-center justify-center gap-3">
+                    <i class="text-3xl font-extrabold fa-solid fa-book-open-reader text-text"></i>
+                    <h1 class="text-2xl font-bold text-text">TaboApp</h1>
+                </div>
+                <div class="relative flex items-center ">
+                    <p class="pr-3 "> <i class="text-xl fa-solid fa-ellipsis-vertical text-text"></i></p>
+                    <p>
+                        <i class="text-3xl fa-solid fa-bell text-text"></i>
+                        <p class=" text-text rounded-full bg-redCrim absolute top-1 right-0 flex justify-center items-center w-4 h-4 text-[10px]">2</p>
+                    </p>
+                </div>
+            </div>
+            <div class="relative w-full">
+                <input type="text" placeholder="rechercher..."
+                    class="w-full py-2 pl-12 pr-4 text-sm border-none rounded-md outline-none bg-secondary text-text">
+                <p class="absolute top-2 left-5">
+                    <i class="fa-solid fa-search text-[gray] text-sm"></i>
+                </p>
+            </div>
+            <div class="flex w-full gap-2 overflow-x-scroll categories">
+                <button class="px-3 py-2 text-sm font-semibold rounded-md bg-secondary text-text">
+                    Tous
+                </button>
+                <button class="px-3 py-2 text-sm font-semibold rounded-md bg-secondary text-text">
+                    Livres
+                </button>
+                <button class="px-3 py-2 text-sm font-semibold rounded-md bg-redCrim text-text">
+                    communautés
+                </button>
+                <button class="flex flex-row px-3 py-2 text-sm font-semibold text-justify rounded-md flex-nowrap bg-secondary text-text">
+                    categories
+                </button>
+            </div>
+        </nav>
+    </section>
+
+    <!-- bare de navigation et side_bar_menu /tabelettes & écrans larges -->
+    <section class="hidden w-full gap-3 side_bar_menu md:flex md:flex-col left-8 bottom-5">
+        <div class="w-full">
+            <nav class="w-full bg-bg h-auto pb-4 flex justify-between pt-4 fixed pr-[4rem] left-[2rem] z-10 top-0 shadow-md shadow-secondary">
+                <div class="flex items-center pl-5">
+                    <div class="flex items-center justify-center gap-3 ">
+                        <i class="text-3xl font-extrabold fa-solid fa-book-open-reader text-text"></i>
+                        <h1 class="text-xl font-bold text-text">TaboApp</h1>
+                    </div>   
+                </div>
+                <div class="relative flex items-center w-1/2">
+                    <input type="text" placeholder="rechercher..."
+                        class="w-full py-2 pl-12 pr-4 text-sm border-none rounded-md bg-secondary text-text">
+                    <p class="absolute top-2 left-5">
+                        <i class="fa-solid fa-search text-[gray] text-sm"></i>
+                    </p>
+                </div>
+                <div class="relative flex items-center gap-3">
+                    <p >
+                        <i class="text-3xl fa-solid fa-bell text-text"></i>
+                        <p class=" text-text rounded-full bg-redCrim absolute top-0 left-[0.65rem] flex justify-center items-center w-4 h-4 text-[10px]">2</p>
+                    </p>
+                    <div class="flex items-center gap-3 ">
+                        <img src="./imgs/CharlesB.jpg" alt="auth.user" width="40" height="20"
+                            class="object-cover w-8 h-8 rounded-full">
+                        <h2 class="text-sm text-text">Charles.B</h2>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <div class="fixed bottom-[1.2rem] left-[2rem] side_bar w-[20%] bg-secondary h-[95vh] rounded-tl-xl rounded-bl-xl z-20">
+            <nav class="flex flex-col w-full gap-6 pt-20 pl-4">
+                <div class="flex items-center gap-4 ">
+                    <i class="text-2xl fa-solid fa-house text-text"></i>
+                    <p class="text-sm text-text">Accueil</p>
+                </div>
+                <div class="flex items-center gap-4 ">
+                    <i class="text-2xl fa-solid fa-user-group text-redCrim"></i>
+                    <p class="text-sm text-redCrim">commun...</p>
+                </div>
+                <div class="flex items-center gap-6 f">
+                    <i class="text-2xl fa-solid fa-book text-text"></i>
+                    <p class="text-sm text-text">lecture...</p>
+                </div>
+                <div class="flex items-center gap-6 ">
+                    <i class="text-2xl fa-solid fa-user text-text"></i>
+                    <p class="text-sm text-text">profil</p>
+                </div>
+                <div class="flex items-center gap-6 ">
+                    <i class="text-2xl fa-solid fa-heart text-text"></i>
+                    <p class="text-sm text-text">favories</p>
+                </div>
+                <div class="flex items-center gap-6 ">
+                    <i class="text-2xl fa-solid fa-user text-text"></i>
+                    <p class="text-sm text-text">Livres audio</p>
+                </div> <br> <br>
+                <div class="flex items-center gap-6 ">
+                    <i class="text-2xl fa-solid fa-gear text-text"></i>
+                    <p class="text-sm text-text">parametres</p>
+                </div>
+                <div class="flex items-center gap-6 ">
+                    <i class="text-2xl fa-solid fa-circle-info text-text"></i>
+                    <p class="text-sm text-text">Aide</p>
+                </div>
+                <div class="flex items-center gap-6 ">
+                    <i class="text-2xl fa-solid fa-right-from-bracket text-text"></i>
+                    <p class="text-sm text-text">Se déconnecter</p>
+                </div>
+            </nav>
+        </div>
+        <div class="annonces fixed w-[20%] right-[2rem] top-[4rem] bg-secondary h-[86vh]  rounded-br-xl">
+            <div class="flex flex-col items-center justify-center w-full gap-4 px-8 py-4 ">
+                <img src="./imgs/Screenshot_20240414-114119~2.png" alt="book_annonce" width="80" height="100"
+                    class="w-[90%] h-[50%] rounded-md object-cover"> 
+                <h2 class="text-base font-medium text-center text-text">
+                    Developer l'amour de la lecture <br>
+                    <span class="text-sm font-semibold text-center text-accent2"> Markos Pullah </span>
+                </h2>
+                <div class="stars">
+                    <i class="fa-solid fa-star text-[#ffd900b8]"></i>
+                    <i class="fa-solid fa-star text-[#ffd900b8]"></i>
+                    <i class="fa-solid fa-star text-[#ffd900b8]"></i>
+                    <i class="fa-solid fa-star text-[#ffd900b8]"></i>
+                </div>
+                <div class="flex gap-2 statistics">
+                    <p class="flex flex-col items-center justify-center pr-3 text-sm border-r text-text border-redCrim">310 <br>
+                         <span>pages</span>
+                    </p>
+                    <p class="flex flex-col items-center justify-center pr-3 text-sm border-r text-text border-redCrim">221 <br>
+                        <span>lecteurs</span>
+                    </p>
+                    <p class="flex flex-col items-center justify-center text-sm text-text">20 <br>
+                        <span>commun</span>
+                   </p>
+                </div>
+                <div class="w-full text-center">
+                    <p class="text-sm text-accent2 lg:text-[13px]">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit, numquam
+                         nesciunt. Modi sit ratione iste nam laboriosam nemo aspernatur aliquid 
+                    </p>
+                </div>
+                <div class="command_btn">
+                    <button class="px-4 py-2 text-sm rounded-md bg-redCrim text-text lg:text-[13px]">
+                        commander ce livre
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- conntainneur principale de la page -->
+    <main class="w-full mt-[9rem] md:fixed md:w-[53%] md:-top-14 md:overflow-y-scroll md:h-[86vh] pb-10 lg:pr-4">
+        <section class="flex flex-col w-full h-auto gap-3">  
+            <div class="items-center justify-between hidden w-full md:flex">
+                <h2 class="text-base font-medium text-text ">
+                    Livres / recommandés
+                </h2>  
+                <button class="px-3 py-2 text-[12px] boder border-bg rounded-md text-text bg-secondary mr-2">
+                    voir tous
+                </button>
+            </div> 
+            <div class="flex flex-col w-full livres md:flex-row md:gap-2 ">
+                <div class="livre w-full md:w-[33%] bg-redCrim h-[26.5rem] md:h-[20rem] rounded-md flex flex-col gap-2">
+                    <div class="book_cover h-[68%] md:h-[62.5%] w-full bg-secondary rounded-tl-md rounded-tr-md p-4">
+                        <img src="./imgs/Screenshot_20240414-114119~2.png" alt="The psychology of money" width="200" height="170"
+                            class="object-cover w-full h-full rounded-md ">
+                    </div>
+                    <h2 class="px-4 pt-3 text-lg font-semibold text-text md:text-sm">The psychology of Money<br>
+                        <span class=" text-base md:text-[12px]">Morgan Hoursel</span>
+                    </h2>
+                    <div class="flex justify-between px-4 ">
+                        <button class="px-3 py-2 rounded-md text-text bg-secondary md:p-2 md:text-[13px]">
+                            commander
+                        </button>
+                        <button class="gap-2 px-3 py-2 border rounded-md felx border-text text-text md:p-2 md:text-[13px]">
+                            <span>favorie</span> 
+                            <i class="text-sm fa-solid fa-heart text-text"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="hidden md:flex livre w-full md:w-[33%] bg-redCrim h-[20rem] rounded-md felx flex-col gap-2">
+                    <div class="book_cover h-[68%] md:h-[62.5%] w-full bg-secondary rounded-tl-md rounded-tr-md p-4">
+                        <img src="./imgs/Screenshot_20240414-114119~2.png" alt="The psychology of money" width="200" height="170"
+                            class="object-cover w-full h-full rounded-md ">
+                    </div>
+                    <h2 class="px-4 pt-3 text-lg font-semibold text-text md:text-sm">The psychology of Money<br>
+                        <span class=" text-base md:text-[12px]">Morgan Hoursel</span>
+                    </h2>
+                    <div class="flex justify-between px-4">
+                        <button class="px-3 py-2 rounded-md text-text bg-secondary md:p-2 md:text-[13px]">
+                            commander
+                        </button>
+                        <button class="gap-2 px-3 py-2 border rounded-md felx border-text text-text md:p-2 md:text-[13px]">
+                            <span>favorie</span> 
+                            <i class="text-sm fa-solid fa-heart text-text"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="hidden md:flex livre w-full md:w-[33%] bg-redCrim h-[20rem] rounded-md felx flex-col gap-2">
+                    <div class="book_cover h-[68%] md:h-[62.5%] w-full bg-secondary rounded-tl-md rounded-tr-md p-4">
+                        <img src="./imgs/Screenshot_20240414-114119~2.png" alt="The psychology of money" width="200" height="170"
+                            class="object-cover w-full h-full rounded-md ">
+                    </div>
+                    <h2 class="px-4 pt-3 text-lg font-semibold text-text md:text-sm">The psychology of Money<br>
+                        <span class=" text-base md:text-[12px]">Morgan Hoursel</span>
+                    </h2>
+                    <div class="flex justify-between px-4">
+                        <button class="px-3 py-2 rounded-md text-text bg-secondary md:p-2 md:text-[13px]">
+                            commander
+                        </button>
+                        <button class="gap-2 px-3 py-2 border rounded-md felx border-text text-text md:p-2 md:text-[13px]">
+                            <span>favorie</span> 
+                            <i class="text-sm fa-solid fa-heart text-text"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="items-center justify-between hidden w-full md:flex">
+                <h2 class="text-xl font-medium text-text lg:text-base">
+                    communautés
+                </h2>  
+                <button class="px-3 py-2 text-[12px] boder border-bg rounded-md text-text bg-secondary mr-2">
+                    categories
+                </button>
+            </div>
+            <div class="commun flex flex-col w-full h-auto gap-1 p-4 mb-16 rounded-md bg-secondary ">
+                <div class="relative flex w-full gap-4 ">
+                    <img src="./imgs/CharlesB.jpg" alt="hôte_principal" width="20" height="20"
+                        class="object-cover w-10 h-10 rounded-full">
+                    <p class="flex text-lg font-semibold justetify-center md:items-center text-text md:text-sm">Charles.B 
+                        <span class="absolute right-0 text-sm"> 16 avr 12 : 08 </span>
+                    </p>
+                </div>             
+                <p class="text-sm text-text md:text-[13px]">a créé une communauté sur le livre : 
+                    <span class="font-bold text-accent2">L'auto-discipline Qautidien</span>
+                 </p>
+                 <div class="w-full h-auto book_cover md:flex md:gap-4 md:justify-between md:pt-4">
+                    <img src="./imgs/Screenshot_20240414-114119~2.png" alt="auto discipline qautidien" width="200" height="170"
+                        class="object-cover w-full h-full rounded-md md:w-1/2">
+                    <div class="flex-col hidden w-1/2 h-auto gap-4 pl-5 border-l infos md:flex border-text">
+                        <p class="text-text ">
+                            infos sur la communauté
+                        </p>
+                        <div class="w-full">
+                            <p class="text-sm text-text md:text-[13px]">Livre : <span class=" text-accent2">auto-discipline qautidien</span></p>
+                            <p class="text-sm text-text md:text-[13px]">hauteur : <span class=" text-accent2">Narton Mayele</span></p>
+                        </div>
+                        <div class="flex gap-2 statistics">
+                            <p class="flex flex-col items-center justify-center pr-3 text-sm border-r text-text border-redCrim">310 <br>
+                                 <span>membres</span>
+                            </p>
+                            <p class="flex flex-col items-center justify-center pr-3 text-sm border-r text-text border-redCrim">12 mai<br>
+                                <span>début</span>
+                            </p>
+                            <p class="flex flex-col items-center justify-center text-sm text-text"> 1 mois <br>
+                                <span>délai</span>
+                           </p>
+                        </div>
+                        <div class="w-full pt-3 details">
+                            <p class="text-sm text-accent2 lg:text-[13px]">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                                Tempora eligendi vitae asperiores aperiam magnam consequuntur
+                                 sit quas repellendus hic! Vero!
+                            </p>
+                         </div>
+                         <div class="w-full pt-1 ">
+                            <button class="w-full px-3 py-2 text-lg rounded-md lg:tetx bg-redCrim text-text md:text-[13px]">
+                                Rejoindre la communauté
+                            </button>
+                         </div>
+                    </div>
+                 </div>
+                 <div class="w-full author md:hidden">
+                    <h2 class="pt-1 text-lg font-semibold text-text">L'auto-discipline Qautidien<br>
+                        <span class="text-base ">Narton Mayele</span>
+                    </h2>
+                 </div>
+                 <div class="w-full pt-1 statistics md:hidden">
+                    <div class="flex justify-between w-full gap-2 statistics">
+                        <p class="flex flex-col items-center justify-center pr-3 text-sm border-r text-text border-redCrim">310 <br>
+                             <span>membres</span>
+                        </p>
+                        <p class="flex flex-col items-center justify-center pr-6 -ml-8 text-sm border-r text-text border-redCrim">12 mai<br>
+                            <span>début</span>
+                        </p>
+                        <p class="flex flex-col items-center justify-center -ml-10 text-sm text-text">1 mois <br>
+                            <span>délai</span>
+                       </p>
+                    </div>
+                 </div>
+                 <div class="w-full pt-3 details md:hidden">
+                    <p class="text-sm text-accent2">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                        Tempora eligendi vitae asperiores aperiam magnam consequuntur
+                         sit quas repellendus hic! Vero!
+                    </p>
+                 </div>
+                 <div class="w-full pt-1 md:hidden">
+                    <button class="w-full px-3 py-2 text-lg rounded-md bg-redCrim text-text">
+                        Rejoindre la communauté
+                    </button>
+                 </div>
+            </div>
+        </section>
+    </main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- basse bare de navigation /phone design -->
+    <section class="w-full bottom_nav md:hidden">
+        <nav class=" w-full fixed bottom-0 bg-bg pb-3 pt-2 pr-[4rem] justify-start left-[2rem]">
+            <div class="flex items-center justify-between w-full ">
+                <div class="flex flex-col items-center justify-center gap-1 ">
+                    <i class="text-xl fa-solid fa-house text-text"></i>
+                    <p class="text-sm text-text">Accueil</p>
+                </div>
+                <div class="flex flex-col items-center justify-center gap-1 ">
+                    <i class="text-xl fa-solid fa-user-group text-redCrim"></i>
+                    <p class="text-sm font-extrabold text-redCrim">commun...</p>
+                </div>
+                <div class="flex flex-col items-center justify-center gap-1 ">
+                    <i class="text-xl fa-solid fa-book text-text"></i>
+                    <p class="text-sm text-text">lecture...</p>
+                </div>
+                <div class="flex flex-col items-center justify-center gap-1 ">
+                    <i class="text-xl fa-solid fa-user text-text"></i>
+                    <p class="text-sm text-text">profil</p>
+                </div>
+            </div>
+        </nav>
+    </section>
+  </body>
+</html>

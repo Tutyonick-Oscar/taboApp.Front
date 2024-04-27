@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./dist/output.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/svg-with-js.min.css"crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/regular.min.css"crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <title>Document</title>
+    <style>
+      html{
+        font-family: Open Sans, sans-serif;
+      }
+      .img{
+        shape-outside : margin-box;
+        margin: 0 20px 0 0 ;
+      }
+    </style>
+  </head>
+  <body class="flex items-center justify-center bg-bg">
+    <div class="relative flex w-full h-screen gap-8 md:px-10 " >
+      <p class="absolute top-0 left-0 items-center justify-center hidden px-4 py-2 md:flex text-text bg-secondary">
+        TaboApp <i class="ml-2 text-5xl font-extrabold fa-solid fa-book-open-reader"></i>
+      </p>
+        <div class="items-center justify-center hidden w-1/2 h-full pr-10 mt-5 border-r md:flex border-secondary">
+            <div class="w-full ">
+              <img src="./imgs/Reading book-amico.png" alt="reading books together" srcset=""
+                  class="hidden lg:flex object-cover img w-[53%] h-[53%] bg-[#80808038] rounded-full shadow-lg p-10 float-left">
+              <p class="text-text lg:text-5xl md:text-4xl">Les vrais leaders sont avant tout des vrais lecteurs<br>
+                lire c'est bon, et lire ensemble c'est encore plus  mieux
+              </p>
+            </div>
+        </div>
+        <form action="" class="flex flex-col w-full h-screen gap-4 px-4 pt-20 r elative md:w-1/2 lg:justify-center lg:items-center">
+            <p class="absolute flex items-center justify-center w-10 h-10 p-4 rounded-md md:hidden top-6 left-4 bg-secondary ">
+                <i class="text-lg fa-solid fa-x text-text "></i>
+            </p>
+            <h2 class="text-4xl font-medium text-text">Sign In</h2>
+            <p class="text-lg text-text">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quibusdam labore voluptatem 
+            </p>
+            <div class="flex flex-col w-full h-auto rounded-md bg-secondary">
+                <div class="flex flex-col w-full gap-2 p-6 pb-2">
+                    <label for="phone" class="text-lg text-text">Téléphone</label>
+                    <input type="text" name="phone" id="phone" class=" outline-none border-none bg-[#80808038] rounded-md w-full text-text px-4 py-2">
+                </div>
+                <div class="relative flex flex-col w-full gap-2 px-6 pb-6">
+                  <p class="absolute top-12 right-8"><i class="text-base fa-solid fa-eye text-text"></i></p>
+                  <p class="absolute opacity-0 top-12 right-8"><i class="text-base fa-solid fa-eye-slash text-text"></i></p>
+                  <label for="phone" class="text-lg text-text">Mot de passe</label>
+                  <input type="text" name="phone" id="phone" class=" outline-none border-none bg-[#80808038]  rounded-md w-full text-text px-4 py-2">
+                </div>
+            </div>
+            <div class="flex justify-between w-full">
+              <div class="flex">
+                <input type="checkbox" name="savePswd" id="savePswd">
+                <span class="ml-2 text-text">sauvegarder mot de passe</span> 
+                
+              </div>
+              <span class="text-redCrim"><a href="#"> mot de passe oublié ? </a></span>
+            </div>
+            <div class="w-full">
+              <button class="flex items-center justify-center w-full py-2 rounded-md text-text bg-redCrim" type="submit">Sign In</button>
+            </div>
+            <p class="pb-5 text-text">
+              N'avez-vous pas encore un compte ? <a class="text-redCrim" href="#">S'enreigistrer</a>
+            </p>
+        </form>
+    </div>
+  </body>
+</html>

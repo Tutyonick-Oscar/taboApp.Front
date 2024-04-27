@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./dist/output.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/svg-with-js.min.css"crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/regular.min.css"crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <title>Document</title>
+    <style>
+      html{
+        font-family: Open Sans, sans-serif;
+      }
+      ::-webkit-scrollbar {
+        width: 5px;
+        border-radius: 5px;
+        background: #9092da; 
+    }
+    </style>
+  </head>
+  <body class="flex flex-col items-center justify-center px-8 bg-bg md:flex-row">
+    <!-- haute barre de navigation / phone design -->
+    <section class="w-full pt-10 top_navigation md:hidden ">
+        <nav class="bg-bg pt-5 pb-2 w-full h-aut flex flex-col gap-5 fixed top-0 pr-[4rem] justify-start left-[2rem] z-20">
+            <div class="flex justify-between w-full">
+                <div class="flex items-center justify-center gap-3">
+                    <i class="text-3xl font-extrabold fa-solid fa-book-open-reader text-text"></i>
+                    <h1 class="text-2xl font-bold text-text">TaboApp</h1>
+                </div>
+                <div class="relative flex items-center ">
+                    <p class="pr-3 "> <i class="text-xl fa-solid fa-ellipsis-vertical text-text"></i></p>
+                    <p>
+                        <i class="text-3xl fa-solid fa-bell text-text"></i>
+                        <p class=" text-text rounded-full bg-redCrim absolute top-1 right-0 flex justify-center items-center w-4 h-4 text-[10px]">2</p>
+                    </p>
+                </div>
+            </div>
+            <div class="relative w-full">
+                <input type="text" placeholder="rechercher..."
+                    class="w-full py-2 pl-12 pr-4 text-sm border-none rounded-md outline-none bg-secondary text-text">
+                <p class="absolute top-2 left-5">
+                    <i class="fa-solid fa-search text-[gray] text-sm"></i>
+                </p>
+            </div>
+            <div class="flex w-full gap-2 overflow-x-scroll categories">
+                <button class="px-3 py-2 text-sm font-semibold rounded-md bg-secondary text-text">
+                    Tous
+                </button>
+                <button class="px-3 py-2 text-sm font-semibold rounded-md bg-secondary text-text">
+                    Livres
+                </button>
+                <button class="px-3 py-2 text-sm font-semibold rounded-md bg-redCrim text-text">
+                    communautés
+                </button>
+                <button class="flex flex-row px-3 py-2 text-sm font-semibold text-justify rounded-md flex-nowrap bg-secondary text-text">
+                    categories
+                </button>
+            </div>
+        </nav>
+    </section>
+
+    <!-- bare de navigation et side_bar_menu /tabelettes & écrans larges -->
+    <section class="hidden w-full gap-3 side_bar_menu md:flex md:flex-col left-8 bottom-5">
+        <div class="w-full">
+            <nav class="w-full bg-bg h-auto pb-4 flex justify-between pt-4 fixed pr-[4rem] left-[2rem] z-10 top-0 shadow-md shadow-secondary">
+                <div class="flex items-center pl-5">
+                    <div class="flex items-center justify-center gap-3 ">
+                        <i class="text-3xl font-extrabold fa-solid fa-book-open-reader text-text"></i>
+                        <h1 class="text-xl font-bold text-text">TaboApp</h1>
+                    </div>   
+                </div>
+                <div class="relative flex items-center w-1/2">
+                    <input type="text" placeholder="rechercher..."
+                        class="w-full py-2 pl-12 pr-4 text-sm border-none rounded-md bg-secondary text-text">
+                    <p class="absolute top-2 left-5">
+                        <i class="fa-solid fa-search text-[gray] text-sm"></i>
+                    </p>
+                </div>
+                <div class="relative flex items-center gap-3">
+                    <p >
+                        <i class="text-3xl fa-solid fa-bell text-text"></i>
+                        <p class=" text-text rounded-full bg-redCrim absolute top-0 left-[0.65rem] flex justify-center items-center w-4 h-4 text-[10px]">2</p>
+                    </p>
+                    <div class="flex items-center gap-3 ">
+                        <img src="./imgs/CharlesB.jpg" alt="auth.user" width="40" height="20"
+                            class="object-cover w-8 h-8 rounded-full">
+                        <h2 class="text-sm text-text">Charles.B</h2>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <div class="fixed bottom-[1.2rem] left-[2rem] side_bar w-[20%] bg-secondary h-[95vh] rounded-tl-xl rounded-bl-xl z-20">
+            <nav class="flex flex-col w-full gap-6 pt-20 pl-4">
+                <div class="flex items-center gap-4 ">
+                    <i class="text-2xl fa-solid fa-house text-text"></i>
+                    <p class="text-sm text-text">Accueil</p>
+                </div>
+                <div class="flex items-center gap-4 ">
+                    <i class="text-2xl fa-solid fa-user-group text-redCrim"></i>
+                    <p class="text-sm text-redCrim">commun...</p>
+                </div>
+                <div class="flex items-center gap-6 f">
+                    <i class="text-2xl fa-solid fa-book text-text"></i>
+                    <p class="text-sm text-text">lecture...</p>
+                </div>
+                <div class="flex items-center gap-6 ">
+                    <i class="text-2xl fa-solid fa-user text-text"></i>
+                    <p class="text-sm text-text">profil</p>
+                </div>
+                <div class="flex items-center gap-6 ">
+                    <i class="text-2xl fa-solid fa-heart text-text"></i>
+                    <p class="text-sm text-text">favories</p>
+                </div>
+                <div class="flex items-center gap-6 ">
+                    <i class="text-2xl fa-solid fa-user text-text"></i>
+                    <p class="text-sm text-text">Livres audio</p>
+                </div> <br> <br>
+                <div class="flex items-center gap-6 ">
+                    <i class="text-2xl fa-solid fa-gear text-text"></i>
+                    <p class="text-sm text-text">parametres</p>
+                </div>
+                <div class="flex items-center gap-6 ">
+                    <i class="text-2xl fa-solid fa-circle-info text-text"></i>
+                    <p class="text-sm text-text">Aide</p>
+                </div>
+                <div class="flex items-center gap-6 ">
+                    <i class="text-2xl fa-solid fa-right-from-bracket text-text"></i>
+                    <p class="text-sm text-text">Se déconnecter</p>
+                </div>
+            </nav>
+        </div>
+        <div class="annonces fixed w-[20%] right-[2rem] top-[4rem] bg-secondary h-[86vh]  rounded-br-xl">
+            <div class="flex flex-col items-center justify-center w-full gap-4 px-8 py-4 ">
+                <img src="./imgs/Screenshot_20240414-114119~2.png" alt="book_annonce" width="80" height="100"
+                    class="w-[90%] h-[50%] rounded-md object-cover"> 
+                <h2 class="text-base font-medium text-center text-text">
+                    Developer l'amour de la lecture <br>
+                    <span class="text-sm font-semibold text-center text-accent2"> Markos Pullah </span>
+                </h2>
+                <div class="stars">
+                    <i class="fa-solid fa-star text-[#ffd900b8]"></i>
+                    <i class="fa-solid fa-star text-[#ffd900b8]"></i>
+                    <i class="fa-solid fa-star text-[#ffd900b8]"></i>
+                    <i class="fa-solid fa-star text-[#ffd900b8]"></i>
+                </div>
+                <div class="flex gap-2 statistics">
+                    <p class="flex flex-col items-center justify-center pr-3 text-sm border-r text-text border-redCrim">310 <br>
+                         <span>pages</span>
+                    </p>
+                    <p class="flex flex-col items-center justify-center pr-3 text-sm border-r text-text border-redCrim">221 <br>
+                        <span>lecteurs</span>
+                    </p>
+                    <p class="flex flex-col items-center justify-center text-sm text-text">20 <br>
+                        <span>commun</span>
+                   </p>
+                </div>
+                <div class="w-full text-center">
+                    <p class="text-sm text-accent2 lg:text-[13px]">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit, numquam
+                         nesciunt. Modi sit ratione iste nam laboriosam nemo aspernatur aliquid 
+                    </p>
+                </div>
+                <div class="command_btn">
+                    <button class="px-4 py-2 text-sm rounded-md bg-redCrim text-text lg:text-[13px]">
+                        commander ce livre
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- conntainneur principale de la page //flex flex-col gap-4/inexitants mbele -->
+    <main class="w-full flex flex-col gap-4 mt-[9rem] md:fixed md:w-[53%] md:-top-14 md:overflow-y-scroll md:h-[86vh] pb-10 lg:pr-4">
+        <section class="cover_and_small_descript w-full lg:flex lg:gap-16 lg:items-center lg:px-16">
+            <div class="hidden lg:flex flex-col gap-20 bg-secondary w-[5%] rounded-xl">
+                <p class=" cursor-pointer flex justify-center items-center w-6 h-6 bg-accent2 rounded-full p-2">
+                    <i class="fa-solid fa-arrow-up text-text text-sm"></i> 
+                </p>
+                <p class=" cursor-pointer flex justify-center items-center w-6 h-6 bg-accent2 rounded-full p-2">
+                    <i class="fa-solid fa-arrow-down text-text text-sm"></i> 
+                </p>
+           </div>
+            <div class=" w-full lg:w-[35%] lg:z-10 flex h-auto items-center lg:shadow-xl lg:shadow-secondary">
+                <div class="w-[80%] lg:w-[100%] h-72">
+                    <img src="./imgs/Screenshot_20240417-230559~2.png" alt="" width="200" height="200"
+                        class="w-full h-full object-cover rounded-xl"
+                    >
+                </div>
+                <div class=" flex flex-col lg:hidden  bg-secondary px-2 h-60 rounded-tr-md rounded-br-md">
+                    <p class=" text-text text-xl font-semibold border-b border-redCrim py-4 flex justify-center items-center flex-col">
+                        421 <br>
+                        <span class=" text-sm">pages</span>
+                    </p>
+                    <p class=" text-text text-xl font-semibold border-b border-redCrim py-4 flex justify-center items-center flex-col">
+                        42 <br>
+                        <span class=" text-sm">lectures</span>
+                    </p>
+                    <p class=" text-text text-xl font-semibold py-4 flex justify-center items-center flex-col">
+                        500 <br>
+                        <span class=" text-sm">notes</span>
+                    </p>
+                </div>
+            </div>
+            <div class="hidden lg:flex flex-col  gap-4 w-[60%] self-start py-5">
+                <h1 class=" text-2xl text-text font-medium">
+                    Acceptez et Apprenez de l'échec
+                </h1>
+                <h2 class=" text-text text-sm">
+                    Léon ganzelet Moun
+                </h2>
+                <p class=" text-accent text-[0.75rem]">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, incidunt!
+                </p>
+            </div>
+        </section>
+        <section class="book_descriptions lg:relative w-full flex flex-col gap-3 lg:bg-secondary lg:rounded-md lg:px-10 py-5 lg:-mt-20 
+            "
+        >
+            <div class=" w-full flex items-center gap-4 lg:mt-20">
+                <button class=" flex items-center gap-1 text-text text-sm">
+                    <!-- done fa-solid -->
+                    58
+                    <i class="fa-regular fa-thumbs-up text-text text-lg"></i> 
+                </button>
+                <button class=" flex items-center gap-1 text-text text-sm">
+                    2
+                    <i class="fa-regular fa-thumbs-down text-text text-lg"></i> 
+                </button>
+                <button class=" flex items-center gap-1 text-text text-sm">
+                    100
+                    <i class="fa-regular fa-comment text-text text-lg"></i> 
+                </button>
+            </div>
+            <div class=" w-full flex justify-between items-center lg:hidden">
+                <p class=" text-text text-xl font-semibold">
+                    Acceptez l'échec <br>
+                    <span class=" text-sm text-[gray]">
+                        Léon ganzelet Moun
+                    </span>
+                </p>
+                <p class=" text-text text-lg font-medium">
+                    $54
+                </p>
+            </div>
+            <div class="book_actions w-full flex justify-between lg:w-auto lg:absolute lg:right-10 lg:top-5">
+               <div class="flex items-center gap-6">
+                    <i class="fa-solid fa-share text-text text-lg cursor-pointer"></i>
+                    <i class="fa-solid fa-download text-text text-lg cursor-pointer"></i>
+                    <!-- done fa-solid -->
+                    <i class="fa-regular fa-bookmark text-text text-lg cursor-pointer"></i>
+               </div>
+               <div class=" flex gap-2 lg:hidden">
+                    <p class=" flex justify-center items-center w-6 h-6 bg-accent2 rounded-full p-2">
+                        <i class="fa-solid fa-arrow-left text-text text-sm"></i> 
+                    </p>
+                    <p class=" flex justify-center items-center w-6 h-6 bg-accent2 rounded-full p-2">
+                        <i class="fa-solid fa-arrow-right text-text text-sm"></i> 
+                    </p>
+               </div>
+            </div>
+            <div class=" w-full flex flex-col gap-3 pb-10 lg:flex  lg:w-1/2">
+                <h2 class=" text-text text-lg font-semibold">
+                    Synopsis
+                </h2>
+                <p class=" text-accent2 text-sm lg:text-[0.8125rem]">
+                    Lorem ipsum  dolor sit amet, consectetur adipisicing elit. Consectetur, magnam?
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Exercitationem, commodi!
+                </p>
+                <button class=" px-3 py-2 bg-redCrim rounded-md text-center text-text text-base font-medium
+                    lg:absolute lg:right-44 lg:top-4 lg:text-sm lg:rounded-xl lg:py-1"
+                >
+                    commander ce livre
+                </button>
+                <section class="book_comments w-full flex flex-col gap-3">
+                    <div class=" w-full">
+                        <p class=" text-text text-lg">Commentaires</p>
+                    </div>
+                    <div class="comments w-full flex flex-col gap-4">
+                        <div class="user_comment w-auto h-auto flex flex-col gap-1">
+                            <div class="w-auto min-w-[15.48rem] h-auto p-2 bg-accent3 rounded-md  self-end ">
+                                <img src="./imgs/CharlesB.jpg" alt="user photo" height="10" width="10"
+                                    class=" w-8 h-8 rounded-full object-cover -mr-5 mt-3 border-[4px] border-secondary float-right">
+                                <div class=" w-full mr-5 relative pb-3">
+                                    <h3 class=" text-accent2 text-lg font-semibold lg:text-sm">Vous</h3>
+                                    <p class=" text-text text-sm lg:text-xs ">
+                                         bonjour 
+                                    </p>
+                                    <small class=" text-[gray] text-[10px] absolute right-4 -bottom-1">10:12</small>
+                                </div>                                   
+                            </div>
+                            <div class="replies  w-full h-auto flex flex-col gap-3 ">
+                                <div class=" w-auto flex gap-3 self-end">
+                                    <button class=" flex items-center gap-1 text-text text-sm lg:text-[0.8125rem]">
+                                        <!-- done fa-solid -->
+                                        58
+                                        <i class="fa-regular fa-thumbs-up text-text text-lg"></i> 
+                                    </button>
+                                    <div class=" flex items-center gap-3 text-text text-sm lg:text-[0.8125rem] border-l border-redCrim pl-3">
+                                        <!-- done fa-solid -->
+                                        5 réponses
+                                        <button class="border-l border-redCrim pl-3 pr-0 lg:text-[0.8125rem] "> répondre </button>
+                                    </div>
+                                </div>  
+                            </div>
+                        </div>
+                        <div class="user_comment w-auto h-auto flex flex-col gap-1">
+                            <div class="w-auto h-auto p-2 bg-accent3 rounded-md  self-start ">
+                                <img src="./imgs/CharlesB.jpg" alt="user photo" height="10" width="10"
+                                    class=" w-8 h-8 rounded-full object-cover -ml-5 mt-3 border-[4px] border-secondary float-left">
+                                <div class=" w-full ml-5 relative pb-3">
+                                    <h3 class=" text-accent text-lg font-semibold lg:text-sm">Karena joe</h3>
+                                    <p class=" text-text text-sm lg:text-xs pr-5">
+                                         bonjour ç dit kw le  chap 4 là-bas !!
+                                         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veniam, voluptas!
+                                    </p>
+                                    <small class=" text-[gray] text-[10px] absolute right-4 -bottom-1">10:12</small>
+                                </div>                 
+                            </div>
+                            <!-- reponses du commentaire & les statistiques -->
+                            <div class="replies_and_statistics  w-full h-auto flex flex-col gap-4">
+                                <div class=" w-auto flex gap-3 self-start">
+                                    <button class=" flex items-center gap-1 text-text text-sm lg:text-[0.8125rem]">
+                                        <!-- done fa-solid -->
+                                        58
+                                        <i class="fa-regular fa-thumbs-up text-text text-lg"></i> 
+                                    </button>
+                                    <div class=" flex items-center gap-3 text-text text-sm lg:text-[0.8125rem] border-l border-redCrim pl-3">
+                                        <!-- done fa-solid -->
+                                        5 réponses
+                                        <button class="border-l border-redCrim pl-3 lg:text-[0.8125rem]"> répondre </button>
+                                    </div>
+                                </div>  
+                                <!-- toutes les reponses -->
+                                <div class=" replies w-full flex flex-col gap-3">
+                                    <div class="user_reply w-auto h-auto flex flex-col gap-1 ml-5">
+                                        <div class="w-auto h-auto p-2 bg-accent3 rounded-md  self-start">
+                                            <img src="./imgs/CharlesB.jpg" alt="user photo" height="10" width="10"
+                                                class=" w-8 h-8 rounded-full object-cover -ml-5 mt-3 border-[4px] border-secondary float-left">
+                                            <div class=" w-full ml-5 relative pb-3">
+                                                <h3 class=" text-accent text-lg font-semibold lg:text-sm">Karena joe</h3>
+                                                <p class=" text-text text-sm lg:text-xs pr-5">
+                                                     bonjour ç dit kw le  chap 4 là-bas !! 
+                                                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, minima!
+                                                     Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore, quae.
+                                                </p>
+                                                <small class=" text-[gray] text-[10px] absolute right-4 -bottom-1">10:12</small>
+                                            </div>                 
+                                        </div>
+                                        <!-- reponses de la reponse & ses statistiques -->
+                                        <div class="replies_and_statistics  w-full h-auto flex flex-col gap-4">
+                                            <div class=" w-auto flex gap-3 self-start">
+                                                <button class=" flex items-center gap-1 text-text text-sm lg:text-[0.8125rem]">
+                                                    <!-- done fa-solid -->
+                                                    58
+                                                    <i class="fa-regular fa-thumbs-up text-text text-lg"></i> 
+                                                </button>
+                                                <div class=" flex items-center gap-3 text-text text-sm lg:text-[0.8125rem] border-l border-redCrim pl-3">
+                                                    <!-- done fa-solid -->
+                                                    5 réponses
+                                                    <button class="border-l border-redCrim pl-3 lg:text-[0.8125rem]"> répondre </button>
+                                                </div>
+                                            </div>  
+                                            <!-- toutes les reponses de la reponse -->
+                                            <div class=" replies w-full flex flex-col gap-4">
+                    
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="user_reply w-auto h-auto flex flex-col gap-1 ml-5">
+                                        <div class="w-auto h-auto p-2 bg-accent3 rounded-md  self-start ">
+                                            <img src="./imgs/CharlesB.jpg" alt="user photo" height="10" width="10"
+                                                class=" w-8 h-8 rounded-full object-cover -ml-5 mt-3 border-[4px] border-secondary float-left">
+                                            <div class=" w-full ml-5 relative pb-3">
+                                                <h3 class=" text-accent text-lg font-semibold lg:text-sm">Karena joe</h3>
+                                                <p class=" text-text text-sm lg:text-xs pr-5">
+                                                     bonjour ç dit kw le  chap 4 là-bas !! 
+                                                </p>
+                                                <small class=" text-[gray] text-[10px] absolute right-4 -bottom-1">10:12</small>
+                                            </div>                 
+                                        </div>
+                                        <!-- reponses de la reponse & ses statistiques -->
+                                        <div class="replies_and_statistics  w-full h-auto flex flex-col gap-4">
+                                            <div class=" w-auto flex gap-3 self-start">
+                                                <button class=" flex items-center gap-1 text-text text-sm lg:text-[0.8125rem]">
+                                                    <!-- done fa-solid -->
+                                                    58
+                                                    <i class="fa-regular fa-thumbs-up text-text text-lg"></i> 
+                                                </button>
+                                                <div class=" flex items-center gap-3 text-text text-sm lg:text-[0.8125rem] border-l border-redCrim pl-3">
+                                                    <!-- done fa-solid -->
+                                                    5 réponses
+                                                    <button class="border-l border-redCrim pl-3 lg:text-[0.8125rem]"> répondre </button>
+                                                </div>
+                                            </div>  
+                                            <!-- toutes les reponses de la reponse -->
+                                            <div class=" replies w-full flex flex-col gap-4">
+                    
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="w-full hidden lg:flex">
+                    <div class="comment_edit w-full">
+                        <form action="" class=" w-full relative">
+                            <input type="text" name="message" id="message" placeholder="message..."class="hidden">
+                            <div contenteditable="true"  aria-placeholder="message..." class=" overflow-y-scroll max-h-20 w-full outline-none border-none rounded-3xl bg-accent3 lg:text-sm text-text px-10 py-2">
+            
+                            </div>
+                            <p class=" absolute top-1 text-2xl cursor-pointer text-text left-2">
+                                <i class="fa-regular fa-face-smile"></i>
+                            </p>
+                            <p class=" absolute top-[0.2rem] text-lg text-text right-0 flex justify-center items-center bg-redCrim rounded-full h-8 w-8">
+                                <i class="fa-solid fa-arrow-up"></i>
+                            </p>
+                        </form>
+                    </div>
+                </section>
+            </div>
+            <div class="hidden lg:flex w-[48%] absolute right-0 pr-10  h-52  top-24 flex-col pl-3 gap-4">
+                <div class=" w-full flex flex-col gap-2">
+                    <h2 class=" text-text text-lg font-semibold">
+                        Editor
+                    </h2>
+                    <p class=" text-text text-[0.8125rem]">
+                        Léon ganzelet Moun 
+                    </p>
+                </div>
+                <div class=" w-full flex flex-col gap-2">
+                    <h2 class=" text-text text-lg font-semibold">
+                        Langue
+                    </h2>
+                    <p class=" text-text text-[0.8125rem]">
+                        Français standard (France)
+                    </p>
+                </div>
+                <div class=" w-full flex  gap-2 items-center h-8">
+                    <p class=" text-text text-sm border-r border-redCrim pr-2">
+                        421 pages
+                    </p>
+                    <p class=" text-text text-sm border-r border-redCrim pr-2">
+                        42 lectures  
+                    </p>
+                    <p class=" text-text text-sm py-4 flex justify-center ">
+                        500 notes  
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- basse bare de navigation /phone design -->
+    <section class="w-full bottom_nav md:hidden">
+        <nav class=" w-full fixed bottom-0 bg-bg pb-3 pt-2 pr-[4rem] justify-start left-[2rem]">
+            <div class="flex items-center justify-between w-full ">
+                <div class="flex flex-col items-center justify-center gap-1 ">
+                    <i class="text-xl fa-solid fa-house text-text"></i>
+                    <p class="text-sm text-text">Accueil</p>
+                </div>
+                <div class="flex flex-col items-center justify-center gap-1 ">
+                    <i class="text-xl fa-solid fa-user-group text-redCrim"></i>
+                    <p class="text-sm font-extrabold text-redCrim">commun...</p>
+                </div>
+                <div class="flex flex-col items-center justify-center gap-1 ">
+                    <i class="text-xl fa-solid fa-book text-text"></i>
+                    <p class="text-sm text-text">lecture...</p>
+                </div>
+                <div class="flex flex-col items-center justify-center gap-1 ">
+                    <i class="text-xl fa-solid fa-user text-text"></i>
+                    <p class="text-sm text-text">profil</p>
+                </div>
+            </div>
+        </nav>
+    </section>
+  </body>
+</html>

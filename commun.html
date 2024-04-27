@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./dist/output.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/svg-with-js.min.css"crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/regular.min.css"crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <title>Document</title>
+    <style>
+      html{
+        font-family: Open Sans, sans-serif;
+      }
+      ::-webkit-scrollbar {
+        width: 0px;
+        background: transparent; /* make scrollbar transparent */
+    }
+    </style>
+  </head>
+  <body class="flex  flex-col px-8 bg-bg md:flex-row w-full h-screen ">
+    <!-- bare de navigation pour les téléphones -->
+    <nav class="bg-bg lg:hidden pt-5 pb-2 left-8 right-8 flex flex-col  gap-5 fixed top-0 pr-[4rem] justify-start  z-20">
+        <div class="flex justify-between w-full">
+            <div class="flex items-center justify-center gap-3">
+                <i class="text-3xl font-extrabold fa-solid fa-book-open-reader text-text"></i>
+                <h1 class="text-2xl font-bold text-text">TaboApp</h1>
+            </div>
+            <div class="relative flex items-center -mr-16">
+                <p class="pr-3 "> <i class="text-xl fa-solid fa-ellipsis-vertical text-text"></i></p>
+                <p>
+                    <i class="text-3xl fa-solid fa-bell text-text"></i>
+                    <p class=" text-text rounded-full bg-redCrim absolute top-1 right-0 flex justify-center items-center w-4 h-4 text-[10px]">2</p>
+                </p>
+            </div>
+        </div>
+    </nav> 
+    <!-- bare de navigation pour les ordinateurs -->
+    <nav class="w-full hidden lg:flex bg-bg h-auto pb-4 justify-between pt-4 fixed pr-[4rem] left-0 z-10 top-0 shadow-md shadow-secondary">
+        <div class="flex items-center pl-5">
+            <div class="flex items-center justify-center gap-3 ">
+                <i class="text-3xl font-extrabold fa-solid fa-book-open-reader text-text"></i>
+                <h1 class="text-xl font-bold text-text">TaboApp</h1>
+            </div>   
+        </div>
+        <div class="relative flex items-center w-1/2">
+            <input type="text" placeholder="rechercher..."
+                class="w-full py-2 pl-12 pr-4 outline-none focus:border-2 focus:border-accent2 text-sm border-none rounded-md bg-secondary text-text">
+            <p class="absolute top-2 left-5">
+                <i class="fa-solid fa-search text-[gray] text-sm"></i>
+            </p>
+        </div>
+        <div class="relative flex items-center gap-3">
+            <p >
+                <i class="text-3xl fa-solid fa-bell text-text"></i>
+                <p class=" text-text rounded-full bg-redCrim absolute top-0 left-[0.65rem] flex justify-center items-center w-4 h-4 text-[10px]">2</p>
+            </p>
+            <div class="flex items-center gap-3 ">
+                <img src="./imgs/CharlesB.jpg" alt="auth.user" width="40" height="20"
+                    class="object-cover w-8 h-8 rounded-full">
+                <h2 class="text-sm text-text">Charles.B</h2>
+            </div>
+        </div>
+    </nav>
+    <section class="commun_window w-full mt-20 flex flex-col gap-4 h-full">
+        <div class="icons hidden w-1/2 bg-secondary lg:bg-bg flex lg:flex lg:w-14 fixed top-0 left-0 h-full border-r border-text ">
+            <div class=" w-full flex px-2 flex-col gap-10 mt-[5.2rem] pl-4">
+                <a href="#" class=" flex w-full gap-4 items-center ">
+                    <i class="lg:text-xl text-lg fa-solid fa-house text-text"></i>
+                    <small class=" text-text text-sm lg:hidden">Accueil</small>
+                </a>
+                <a href="#" class=" w-full px-0 flex  gap-4 items-center ">
+                    <!-- la classe active est : text-redCrim bg-secondary -ml-2 rounded-md p-2 flex justify-center items-center -->
+                    <i class="lg:text-xl text-lg fa-solid fa-user-group text-redCrim bg-secondary -ml-2 rounded-md p-2 flex justify-center items-center"></i>
+                    <small class=" text-text text-sm lg:hidden"> communauté </small>
+                </a>
+                <a href="#"  class=" w-full px-0 flex  gap-4 items-center ">
+                    <i class="lg:text-xl text-lg fa-solid fa-book text-text"></i>
+                    <small class=" text-text text-sm lg:hidden"> Lectures </small>
+                </a>
+                <a href="#" class=" w-full px-0 flex  gap-4 items-center ">
+                    <i class="lg:text-xl text-lg fa-solid fa-book text-text"></i>
+                    <small class=" text-text text-sm lg:hidden"> Livres audios </small>
+                </a>
+                <a href="#" class=" w-full  flex  gap-4 items-center ">
+                    <i class="lg:text-xl text-lg fa-solid fa-gear text-text"></i>
+                    <small class=" text-text text-sm lg:hidden"> paramètres </small>
+                </a>
+                <a href="#" class=" w-full px-0 flex  gap-4 items-center ">
+                    <i class="lg:text-xl text-lg fa-solid fa-circle-info text-text"></i>
+                    <small class=" text-text text-sm lg:hidden"> Aide </small>
+                </a>
+                <a href="#" class=" w-full px-0 flex  gap-4 items-center ">
+                    <i class="lg:text-xl text-lg fa-solid fa-right-from-bracket text-text"></i>
+                    <small class=" text-text text-sm lg:hidden"> Déconnexion </small>
+                </a>
+                <a href="#" class=" mt-9 w-full px-0 flex  gap-4 items-center">
+                    <img src="./imgs/CharlesB.jpg" alt="auth.user" width="40" height="20"
+                        class="object-cover w-8 h-8 rounded-full"
+                    > 
+                    <small class=" text-text text-sm lg:hidden">Vous</small>
+                </a>
+            </div>
+        </div>
+        <div class="window_header fixed lg:w-[20%] lg:pr-0 flex flex-col h-auto gap-2  left-8 right-8 lg:left-[4rem] ">
+            <div class=" w-full hidden lg:flex justify-between items-center">
+                <div class="flex gap-4 justify-center items-center">
+                    <p class=" bg-secondary px-4 py-2 rounded-md text-text text-xl"> < </p>
+                    <p class=" text-accent2 text-xl font-semibold">
+                        communauté
+                    </p>
+                </div>
+                <p>
+                    <i class="text-xl fa-solid fa-ellipsis-vertical text-text"></i>
+                </p>
+            </div>
+            <div class="arow_img_points flex w-full justify-between items-center lg:justify-center relative">
+                <p class="text-text text-sm lg:hidden"> 
+                    <a href="#">
+                        <i class="text-xl fa-solid fa-arrow-left text-text"></i>
+                    </a>
+                </p>
+                <!-- commun_menu_popup shown, img scaled in grow with w-16 h-16 else w-10 h-10 -->
+                <img src="./imgs/Screenshot_20240414-114119~2.png" alt="commun cover" width="20" height="20"
+                class="object-cover w-10 h-10 rounded-full lg:w-28 lg:h-28 ">
+                <p class=" lg:hidden">
+                    <i class="text-xl fa-solid fa-ellipsis-vertical text-text"></i>
+                </p> 
+                <!-- visible si l'auth est l'hôte principale -->
+                <label for="cover" class="Edit_photo top-10 right-[34%] absolute lg:top-20 lg:right-[28%] cursor-pointer">
+                    <i class="text-xl fa-solid fa-camera text-redCrim"></i>
+                <label/>
+                <input type="file" name="cover" id="cover" class="hidden">
+            </div>
+            <div class="name_active_members w-full flex flex-col justify-center items-center gap-1 ">
+                <!-- commun_menu_popup shown, text scaled in grow else text-lg font-semibold -->
+                <h2 class="text-text text-lg font-semibold  text-center lg:text-accent2">Auto discipline Qautidien</h2>
+                <!-- infos click hide this esle show -->
+                <p class="text-[gray] lg:hidden">Actif</p>
+                <p class="text-[gray] text-sm hidden">membres : 2012 </p>
+                <!-- infos click hide this esle show -->
+                <div class="images w-full flex gap-2 items-center justify-center lg:hidden">
+                    <img src="./imgs/CharlesB.jpg" alt="commun cover" width="20" height="20"
+                        class="object-cover w-9 h-9 rounded-full">
+                    <img src="./imgs/CharlesB.jpg" alt="commun cover" width="20" height="20"
+                        class="object-cover w-9 h-9 rounded-full">
+                    <img src="./imgs/CharlesB.jpg" alt="commun cover" width="20" height="20"
+                        class="object-cover w-9 h-9 rounded-full">
+                    <img src="./imgs/CharlesB.jpg" alt="commun cover" width="20" height="20"
+                        class="object-cover w-9 h-9 rounded-full">
+                    <img src="./imgs/CharlesB.jpg" alt="commun cover" width="20" height="20"
+                        class="object-cover w-9 h-9 rounded-full">
+                    <div class=" flex items-center justify-center p-2 w-9 h-9 rounded-full bg-redCrim text-text">+12</div>       
+                </div>
+            </div>
+            <!-- commun_menu_popup  -->
+            <div class="commun_menu_popup hidden  fixed top-40 right-8 w-[50%] justify-center items-start gap-3 h-auto bg-secondary lg:w-[15%] lg:left-[8rem] shadow-lg z-20 flex flex-col px-4 py-2 rounded-md">
+                <li class=" list-none">
+                    <button class=" text-text text-sm lg:text-[0.8125rem]">
+                        info communauté
+                    </button>
+                </li>
+                <li class=" list-none">
+                    <button class=" text-text text-sm lg:text-[0.8125rem]">
+                        Rechercher
+                    </button>
+                </li>
+                <li class=" list-none ">
+                    <button class=" text-text text-sm text-left lg:text-[0.8125rem]">
+                       Effacer l'historique 
+                    </button>
+                </li>
+                <li class=" list-none">
+                    <button class=" text-text text-sm text-left lg:text-[0.8125rem]">
+                        Quitter la communauté
+                    </button>
+                </li>
+            </div>
+        </div>
+        <!-- infos cliked hide this else show it -->
+        <div class=" commun_notify hidden lg:w-[53%] mt-40 w-full border-2 border-secondary rounded-md h-[65%] p-4 flex flex-col overflow-y-scroll gap-2
+        md:fixed md:w-[53%] lg:-top-14 md:overflow-y-scroll md:h-[86vh] pb-10 lg:pr-4 lg:ml-80">
+            <div class="questions bg-secondary w-full p-2 rounded flex flex-col ">
+              <div class="question w-full border-b border-text pb-1">
+                <div class=" flex justify-between w-full border-b border-text pb-1 ">
+                    <h3 class="text-text text-lg ">Quiz n 1<h3/>
+                    <small class="text-text "> maintenant</small>
+                </div>
+                <p class=" text-text text-sm pt-1">
+                        <small style="
+                            shape-outside : margin-box;
+                            margin: 0 3px 1px 0 ;
+                            "
+                            class="h-8 w-8 bg-redCrim rounded-full p-3 flex justify-center items-center float-left">
+                            <i class="text-sm fa-solid fa-1 text-text "></i>
+                        </small>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, obcaecati.
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, accusantium.
+                </p>
+                    <!-- <form action="" class=" w-full relative pt-1">
+                        <input type="text" name="message" id="message" placeholder="message..."class="hidden">
+                        <div contenteditable="true"  aria-placeholder="message..." class=" overflow-y-scroll max-h-20 w-full outline-none border-none rounded-3xl bg-[#8080804f] text-text px-10 py-[0.3rem]">
+        
+                        </div>
+                        <p class=" absolute top-1 text-lg text-text right-0 flex justify-center items-center bg-redCrim rounded-full h-8 w-8">
+                            <i class="fa-solid fa-arrow-up"></i>
+                        </p>
+                    </form> -->
+                <p class="text-[green] text-sm  flex items-center gap-4">
+                        répondue 
+                        <small class="p-1 rounded-full bg-[#8080804f] flex justify-center items-center">
+                            <i class="fa-solid fa-check text-sm font-bold"></i>
+                        </small>
+                </p>
+              </div> 
+              <div class="question w-full border-b border-text pb-1">
+                <p class=" text-text text-sm pt-1">
+                    <small style="
+                        shape-outside : margin-box;
+                        margin: 0 3px 1px 0 ;
+                        "
+                        class="h-8 w-8 bg-redCrim rounded-full p-3 flex justify-center items-center float-left">
+                        <i class="text-sm fa-solid fa-2 text-text "></i>
+                    </small>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, obcaecati.
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, accusantium.
+                </p>
+                 <form action="" class=" w-full relative pt-1">
+                        <input type="text" name="message" id="message" placeholder="message..."class="hidden">
+                        <div contenteditable="true"  aria-placeholder="message..." class=" overflow-y-scroll max-h-20 w-full lg:w-1/2 outline-none border-none rounded-3xl bg-[#8080804f] text-text px-10 py-[0.3rem]">
+        
+                        </div>
+                        <p class=" absolute top-1 text-lg text-text right-0 lg:right-1/2 flex justify-center items-center bg-redCrim rounded-full h-8 w-8">
+                            <i class="fa-solid fa-arrow-up"></i>
+                        </p>
+                    </form>
+                </div> 
+            </div>
+            <div class="questions bg-secondary w-full p-2 rounded flex flex-col ">
+                <div class="question w-full border-b border-text pb-1">
+                  <div class=" flex justify-between w-full border-b border-text pb-1 ">
+                      <h3 class="text-text text-lg ">Quiz n 2<h3/>
+                      <small class="text-text "> maintenant</small>
+                  </div>
+                  <p class=" text-text text-sm pt-1">
+                          <small style="
+                              shape-outside : margin-box;
+                              margin: 0 3px 1px 0 ;
+                              "
+                              class="h-8 w-8 bg-redCrim rounded-full p-3 flex justify-center items-center float-left">
+                              <i class="text-sm fa-solid fa-1 text-text "></i>
+                          </small>
+                          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, obcaecati.
+                          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, accusantium.
+                  </p>
+                    <form action="" class=" w-full relative pt-1">
+                          <input type="text" name="message" id="message" placeholder="message..."class="hidden">
+                          <div contenteditable="true"  aria-placeholder="message..." class=" overflow-y-scroll max-h-20 w-full lg:w-1/2 outline-none border-none rounded-3xl bg-[#8080804f] text-text px-10 py-[0.3rem]">
+          
+                        </div>
+                        <p class=" absolute top-1 text-lg text-text right-0 lg:right-1/2 flex justify-center items-center bg-redCrim rounded-full h-8 w-8">
+                            <i class="fa-solid fa-arrow-up"></i>
+                        </p>
+                    </form>
+                  <!-- <p class="text-[green] text-sm  flex items-center gap-4">
+                          répondue 
+                          <small class="p-1 rounded-full bg-[#8080804f] flex justify-center items-center">
+                              <i class="fa-solid fa-check text-sm font-bold"></i>
+                          </small>
+                  </p> -->
+                </div> 
+                <div class="question w-full border-b border-text pb-1">
+                  <p class=" text-text text-sm pt-1">
+                      <small style="
+                          shape-outside : margin-box;
+                          margin: 0 3px 1px 0 ;
+                          "
+                          class="h-8 w-8 bg-redCrim rounded-full p-3 flex justify-center items-center float-left">
+                          <i class="text-sm fa-solid fa-2 text-text "></i>
+                      </small>
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, obcaecati.
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, accusantium.
+                  </p>
+                   <!-- <form action="" class=" w-full relative pt-1">
+                          <input type="text" name="message" id="message" placeholder="message..."class="hidden">
+                          <div contenteditable="true"  aria-placeholder="message..." class=" overflow-y-scroll max-h-20 w-full outline-none border-none rounded-3xl bg-[#8080804f] text-text px-10 py-[0.3rem]">
+          
+                          </div>
+                          <p class=" absolute top-1 text-lg text-text right-0 flex justify-center items-center bg-redCrim rounded-full h-8 w-8">
+                              <i class="fa-solid fa-arrow-up"></i>
+                          </p>
+                      </form> -->
+                      <p class="text-[green] text-sm  flex items-center gap-4">
+                          répondue 
+                          <small class="p-1 rounded-full bg-[#8080804f] flex justify-center items-center">
+                              <i class="fa-solid fa-check text-sm font-bold"></i>
+                          </small>
+                    </p>
+                  </div> 
+            </div>
+        </div>
+        <!-- infos cliked hide this else show it -->
+        <div class="commun-chats hidden lg:block  mt-40 w-full lg:w-[53%]  border-2 border-secondary rounded-md h-[65%] p-4 flex flex-col overflow-y-scroll gap-3 lg:gap-2
+        md:fixed md:w-[53%] lg:-top-14  md:h-[86vh] pb-10 lg:pr-4 lg:ml-80">
+            <div class=" flex flex-col gap-2 lg:gap-1 w-full h-auto">
+                <div class="bar flex gap-1 w-full justify-center lg:justify-normal">
+                    <small class="border-t-2 lg:border-t  border-[gray] w-[33%] lg:w-[45%]  mt-2"></small>
+                    <small class="text-[gray] text-sm w-auto lg:w-[10%] lg:flex lg:justify-center lg:items-center lg:text-[12px]">12-04-2021</small>
+                    <small class="border-t-2 lg:border-t border-[gray] w-[33%] lg:w-[45%] mt-2"></small>
+                </div>
+                <div class="member_message w-auto h-auto p-2 bg-secondary rounded-md  self-end ">
+                    <img src="./imgs/CharlesB.jpg" alt="user photo" height="10" width="10"
+                        class=" w-8 h-8 rounded-full object-cover -mr-5 mt-3 border-[4px] border-bg float-right">
+                    <div class=" w-full mr-5 relative pb-3">
+                        <h3 class=" text-accent2 text-lg font-semibold lg:text-sm">Vous</h3>
+                        <p class=" text-text text-sm lg:text-xs"> bonjour ç dit kw le  chap 4 là-bas !! </p>
+                        <small class=" text-[gray] text-[10px] absolute right-4 -bottom-1">10:12</small>
+                    </div>                 
+                </div>
+                <div class="views self-end flex">
+                    <img src="./imgs/CharlesB.jpg" alt="user photo" height="10" width="10"
+                    class=" w-5 h-5 rounded-full object-cover">
+                    <img src="./imgs/CharlesB.jpg" alt="user photo" height="10" width="10"
+                    class=" w-5 h-5 rounded-full object-cover border-l-2 border-bg -ml-2">
+                    <img src="./imgs/CharlesB.jpg" alt="user photo" height="10" width="10"
+                    class=" w-5 h-5 rounded-full object-cover border-l-2 border-bg -ml-2">
+                    <img src="./imgs/CharlesB.jpg" alt="user photo" height="10" width="10"
+                    class=" w-5 h-5 rounded-full object-cover border-l-2 border-bg -ml-2">
+                    <div class=" w-5 h-5 rounded-full flex justify-center items-center bg-redCrim text-text -ml-2 text-sm p-2">+9</div>
+                </div>
+            </div>
+            <div class=" flex flex-col gap-2 w-full h-auto">
+                <div class="bar flex gap-1 w-full justify-center ">
+                    <small class="border-t-2 lg:border-t lg:w-[45%] border-[gray] w-[33%] mt-2"></small>
+                    <small class="text-[gray] text-sm w-auto lg:w-[10%] lg:flex lg:justify-center lg:items-center lg:text-[12px]">Yesterday</small>
+                    <small class="border-t-2 lg:border-t lg:w-[45%]  border-[gray] w-[33%] mt-2"></small>
+                </div>
+                <div class="member_message w-auto h-auto p-2 bg-secondary rounded-md  self-start ">
+                    <img src="./imgs/CharlesB.jpg" alt="user photo" height="10" width="10"
+                        class=" w-8 h-8 rounded-full object-cover -ml-5 mt-3 border-[4px] border-bg float-left">
+                    <div class=" w-full ml-5 relative pb-3">
+                        <h3 class=" text-accent text-lg font-semibold lg:text-sm">Karena joe</h3>
+                        <p class=" text-text text-sm lg:text-xs"> bonjour ç dit kw le  chap 4 là-bas !! </p>
+                        <small class=" text-[gray] text-[10px] absolute right-4 -bottom-1">10:12</small>
+                    </div>                 
+                </div>
+                <div class="views self-start flex">
+                    <img src="./imgs/CharlesB.jpg" alt="user photo" height="10" width="10"
+                    class=" w-5 h-5 rounded-full object-cover">
+                    <img src="./imgs/CharlesB.jpg" alt="user photo" height="10" width="10"
+                    class=" w-5 h-5 rounded-full object-cover border-l-2 border-bg -ml-2">
+                    <img src="./imgs/CharlesB.jpg" alt="user photo" height="10" width="10"
+                    class=" w-5 h-5 rounded-full object-cover border-l-2 border-bg -ml-2">
+                    <img src="./imgs/CharlesB.jpg" alt="user photo" height="10" width="10"
+                    class=" w-5 h-5 rounded-full object-cover border-l-2 border-bg -ml-2">
+                    <div class=" w-5 h-5 rounded-full flex justify-center items-center bg-redCrim text-text -ml-2 text-sm p-2">+9</div>
+                </div>
+            </div>
+        </div>
+        <div class="message_edit w-full mb-5 hidden">
+            <form action="" class=" w-full relative">
+                <input type="text" name="message" id="message" placeholder="message..."class="hidden">
+                <div contenteditable="true"  aria-placeholder="message..." class=" overflow-y-scroll max-h-20 w-full outline-none border-none rounded-3xl bg-secondary text-text px-10 py-3">
+
+                </div>
+                <p class=" absolute top-3 text-lg text-text left-2">
+                    <i class="fa-regular fa-face-smile"></i>
+                </p>
+                <p class=" absolute top-1 text-lg text-text right-0 flex justify-center items-center bg-redCrim rounded-full h-10 w-10">
+                    <i class="fa-solid fa-arrow-up"></i>
+                </p>
+            </form>
+        </div>
+        <!-- infos cliked show this else hide       commun_menu_popup  clicked blur-sm--> 
+        <section class="commu_infos w-full flex  gap-2  lg:top-32  lg:block  mt-40  
+        lg:fixed lg:bottom-[1.2rem] lg:left-[4rem]  lg:w-[20%] overflow-y-scroll z-10 ">
+            <div class="commun_descript w-full h-auto pt-2 flex flex-col gap-2 relative">
+                <p class="text-text text-sm lg:text-[0.8125rem] ">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, facilis.
+                </p>
+                <div class="edit_descript hidden  w-full flex flex-col gap-2">
+                    <input type="text"
+                        class=" w-full outline-none rounded-lg px-3 py-2 bg-bg border border-secondary text-text text-sm lg:text-[0.8125rem]"
+                        value=" Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, facilis."
+                    >
+                    <div class=" w-[60%] flex gap-2  bg-redCrim px-2 rounded-sm">
+                        <button class="  text-text text-sm lg:text-[0.8125rem]">
+                            Enreigistrer
+                        </button>
+                        <button class="border-l pl-2 border-secondary  text-text text-sm lg:text-[0.8125rem]">
+                            Annuler
+                        </button>
+                    </div>
+                </div>
+                <div class="flex  justify-between w-full border-b border-secondary pb-1 ">
+                    <small class="text-[gray] text-sm lg:text-xs">Créé le 18 avr 2024</small>
+                    <!-- visible if the auth is the admin -->
+                    <small class=" cursor-pointer">
+                        <i class="fa-solid fa-pen text-[gray] text-lg lg:text-base"></i>
+                    </small>
+                </div>
+                <div class="commun_delay w-full border-b border-secondary pb-1 ">
+                    <div class="edit_delay  w-full flex flex-col gap-2  relative overflow-y-visible hidden">
+                        <div class="absolute flex gap-4 left-0 top-0 2">
+                            <div class="annee  border-t border-b border-b-secondary border-t-secondary flex flex-col h-6  w-10  overflow-y-scroll overflow-visible">
+                                <p class=" text-text text-sm lg:text-[0.8125rem] w-full h-full">0 an</p>
+                                <p class=" text-text text-sm lg:text-[0.8125rem] w-full h-full">1 an</p>
+                                <p class=" text-text text-sm lg:text-[0.8125rem] w-full h-full">2 ans</p>
+                                <p class=" text-text text-sm lg:text-[0.8125rem] w-full h-full">3 ans</p>
+                            </div>
+                            <div class="mois  border-t border-b border-b-secondary border-t-secondary   flex flex-col h-6  w-12  overflow-y-scroll">
+                                <p class=" text-text text-sm lg:text-[0.8125rem] w-full h-full">0 mois</p>
+                                <p class=" text-text text-sm lg:text-[0.8125rem] w-full h-full">1 mois</p>
+                                <p class=" text-text text-sm lg:text-[0.8125rem] w-full h-full">2 mois</p>
+                                <p class=" text-text text-sm lg:text-[0.8125rem] w-full h-full">3 mois</p>
+                                <p class=" text-text text-sm lg:text-[0.8125rem] w-full h-full">4 mois</p>
+                                <p class=" text-text text-sm lg:text-[0.8125rem] w-full h-full">5 mois</p>
+                            </div>
+                            <div class="semaines border-t border-b border-b-secondary border-t-secondary   flex flex-col h-6  w-20  overflow-y-scroll">
+                                <p class=" text-text text-sm lg:text-[0.8125rem] w-full h-full">0 semaine</p>
+                                <p class=" text-text text-sm lg:text-[0.8125rem] w-full h-full">1 semaine</p>
+                                <p class=" text-text text-sm lg:text-[0.8125rem] w-full h-full">2 semaines</p>
+                                <p class=" text-text text-sm lg:text-[0.8125rem] w-full h-full">3 semaines</p>
+                            </div>
+                            <div class="jours  border-t border-b border-b-secondary border-t-secondary   flex flex-col h-6  w-16  overflow-y-scroll">
+                                <p class=" text-text text-sm lg:text-[0.8125rem] w-full h-full">0 jour</p>
+                                <p class=" text-text text-sm lg:text-[0.8125rem] w-full h-full">1 jour</p>
+                                <p class=" text-text text-sm lg:text-[0.8125rem] w-full h-full">2 jours</p>
+                                <p class=" text-text text-sm lg:text-[0.8125rem] w-full h-full">3 jours</p>
+                                <p class=" text-text text-sm lg:text-[0.8125rem] w-full h-full">4 jours</p>
+                                <p class=" text-text text-sm lg:text-[0.8125rem] w-full h-full">5 jours</p>
+                                <p class=" text-text text-sm lg:text-[0.8125rem] w-full h-full">6 jours</p>
+                            </div>
+                        </div>
+                        <input type="text"
+                            class=" w-full outline-none rounded-lg hidden bg-bg text-text text-sm lg:text-[0.8125rem]"
+                        >
+                        <div class=" w-[60%] flex gap-2  bg-redCrim px-2 rounded-sm mt-7">
+                            <button class="  text-text text-sm lg:text-[0.8125rem]">
+                                Enreigistrer
+                            </button>
+                            <button class="border-l pl-2 border-secondary  text-text text-sm lg:text-[0.8125rem]">
+                                Annuler
+                            </button>
+                        </div>
+                    </div>
+                    <div class=" w-full flex justify-between items-center ">
+                        <p class=" text-text text-sm lg:text-[0.8125rem]">Délai : 1 mois 2 semaines</p>
+                        <small class=" cursor-pointer">
+                            <i class="fa-solid fa-pen text-[gray] text-lg lg:text-base"></i>
+                        </small>
+                    </div>
+                    <div class="w-full h-2  mt-3  border border-[gray] rounded-md ">
+                        <!-- @if($count==100) rounded-md @endif -->
+                        <div style ="width:20%"
+                             class="bg-accent2  h-[100%] rounded-l-md  ease-in-out duration-300 "
+                             aria-valuenow="{{$count}}" aria-valuemin="{{$count}}" aria-valuemax="100" role="progressbar"
+                         >
+                        </div>
+                    </div>
+                </div>
+                <div class="invite w-full  border-b border-secondary pb-1 flex justify-between items-center ">
+                     <p class="text-text flex flex-col gap-1 lg:text-[13px]">
+                        tab.app/autodisciplineqautidien/
+                        <small class="text-[gray] text-[14px] text-xs">lien d'invitation</small>
+                    </p>
+                    <p>
+                        <i class="fa-solid fa-qrcode text-[gray] text-lg"></i>
+                    </p>
+                </div>
+                <div class="invite w-full  border-b border-secondary pb-1 flex justify-between items-center ">
+                    <p class="text-text flex flex-col gap-1 lg:text-[13px]">
+                       Notifications
+                       <small class="text-[gray] text-[14px] text-xs">Activé</small>
+                   </p>
+                   <p>
+                    <i class="fa-solid fa-toggle-on text-accent2 text-lg"></i>
+                   </p>
+               </div>
+               <div class="members_info flex w-full bg-secondary flex-col gap-4 p-2">
+                    <div class="search w-full relative hidden">
+                        <p class=" absolute top-3 left-0">
+                            <i class="text-xl fa-solid fa-arrow-left text-[gray]"></i>
+                        </p>
+                        <input type="text" name="search_member" id="search_member" class=" w-full
+                            px-3 py-2 pl-10 outline-none bg-secondary text-text border-b-2 border-text" 
+                            placeholder="rechercher un membre..."
+                        >
+                    </div>
+                    <div class="members_effectif flex items-center justify-between w-full">
+                        <p class="text-text text-sm lg:text-[0.8125rem] flex ">
+                            Membres 201<span>/250</span>
+                            <small class=" cursor-pointer">
+                                <i class="fa-solid fa-pen text-[gray] text-lg lg:text-[0.8125rem] ml-5"></i>
+                            </small>
+                        </p>
+                        
+                        <p class="text-text text-sm">
+                            <i class="fa-solid fa-search cursor-pointer text-accent2 text-lg "></i>
+                        </p>
+                    </div>
+                    <div class="edit_members_effectif w-full flex flex-col gap-2 hidden">
+                        <input type="text"
+                            class=" w-full outline-none rounded-lg px-3 py-2 bg-bg border border-secondary text-text text-sm lg:text-[0.8125rem]"
+                            value="250"
+                        >
+                        <div class=" w-[60%] flex gap-2  bg-redCrim px-2 rounded-sm">
+                            <button class="  text-text text-sm lg:text-[0.8125rem]">
+                                Enreigistrer
+                            </button>
+                            <button class="border-l pl-2 border-secondary  text-text text-sm lg:text-[0.8125rem]">
+                                Annuler
+                            </button>
+                        </div>
+                    </div>
+                    <div class="members_add flex items-center justify-between w-full">
+                        <p class="text-text text-sm lg:text-xs">Ajuter un membre</p>
+                        <p class="text-text text-sm cursor-pointer">
+                            <i class="fa-solid fa-user-plus text-accent2 text-lg"></i>
+                        </p>
+                    </div>
+                    <div class="members w-full gap-2 flex flex-col">
+                        <div class="member flex items-center justify-between w-full">
+                            <div class=" flex w-full gap-2 items-center">
+                                <img src="./imgs/CharlesB.jpg" alt="member photo" width="20" height="20"
+                                    class=" w-10 h-10 rounded-full object-cover">
+                                <p class="text-text text-sm  lg:font-light">Charles.B</p>
+                            </div>
+                            <p class="text-text text-sm py-0 flex items-center justify-center px-3 cursor-pointer rounded-xl bg-accent2">
+                                <i class="fa-solid fa-ellipsis text-text text-lg"></i>
+                            </p>
+                        </div>
+                        <div class="member flex items-center justify-between w-full ">
+                            <div class=" flex w-full gap-2 items-center">
+                                <img src="./imgs/CharlesB.jpg" alt="member photo" width="20" height="20"
+                                    class=" w-10 h-10 rounded-full object-cover">
+                                <p class="text-text text-sm lg:font-light">Katerina joe</p>
+                            </div>
+                            <p class="text-text text-[12px] self-end text-end">
+                                hôte principale
+                            </p>
+                        </div>
+                        <div class="member flex items-center justify-between w-full">
+                            <div class=" flex w-full gap-2 items-center">
+                                <img src="./imgs/CharlesB.jpg" alt="member photo" width="20" height="20"
+                                    class=" w-10 h-10 rounded-full object-cover">
+                                <p class="text-text text-sm lg:font-light">Alenga M'Ocu</p>
+                            </div>
+                            <p class="text-text text-sm py-0 flex items-center justify-center px-3 rounded-xl bg-accent2">
+                                <i class="fa-solid fa-ellipsis text-text text-lg"></i>
+                            </p>
+                        </div>
+                   
+               </div>
+            </div>
+            <div class="exit w-full flex gap-4  items-center">
+                <p class=" cursor-pointer">
+                    <i class="fa-solid fa-arrow-up-from-bracket text-redCrim text-lg"></i>
+                </p>
+                <p class=" text-redCrim text-sm cursor-pointer">Quitter</p>
+            </div>
+               <!-- popup_menu_for_member_actions  -->
+               <div class="popup_menu_for_member_actions hidden  flex flex-col gap-4 px-4 py-3 items-start fixed w-[85%] lg:w-[20%]  bg-accent h-48 rounded top-[18rem]
+               3 lg:top-[16rem] lg:h-40 left-7 lg:left-16">
+                    <button class=" text-bg font-semibold text-lg lg:text-sm">
+                        <a href="#">Message au membre</a>
+                    </button>
+                    <button class=" text-bg font-bold text-lg lg:text-sm">
+                        <a href="#">Voir le membre</a>
+                    </button>
+                    <button class=" text-bg lg:text-sm  text-lg font-bold">
+                        <a href="#">Retirer le membre</a>
+                    </button>
+                    <button class=" text-bg text-lg lg:text-sm flex justify-between gap-10 items-center font-bold">
+                        <a href="#">Message interdits</a>
+                        <p class=" self-end">
+                            <i class="fa-solid fa-toggle-on text-secondary text-lg"></i>
+                        </p>
+                    </button>
+               </div>
+            </div>
+        </section>
+    </section>
+  </body>
+</html>
